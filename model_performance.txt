@@ -1,0 +1,6 @@
+logistic regression: 0.516733844019
+xgboost: 0.688103923953
+xgboost+lr: 0.712801388888889
+xgboost+fm: 0.73660011244916902
+xgboost+ffm: 0.738647288798
+
