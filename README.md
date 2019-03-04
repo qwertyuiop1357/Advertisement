@@ -7,7 +7,7 @@ Libffm format:
 \<label\> \<field1\>:\<feature1\>:\<value1\> \<field2\>:\<feature2\>:\<value2\> ...
 ...
 
-
+data_preview.txt: a preview of the data set. This data set is from Tianchi https://tianchi.aliyun.com/dataset/.
 
 ## Reference
 1. Factorization machine: https://www.csie.ntu.edu.tw/~b97053/paper/Rendle2010FM.pdf
