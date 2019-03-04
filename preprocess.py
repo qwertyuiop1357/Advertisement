@@ -1,4 +1,4 @@
-def build_date_buf(date_pivot, left, right):
+def _build_date_buf(date_pivot, left, right):
     """
     :param date_pivot:
     :param move:
