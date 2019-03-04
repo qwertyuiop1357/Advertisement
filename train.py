@@ -38,6 +38,8 @@ if __name__ == '__main__':
     print("ROC auc score for XGBoost+LR is " + auc)
     
     # XGBoost+FM
+    res = pd.DataFrame(res)
+    test_res = pd.DataFrame(test_res)
     dummy = pd.get_dummies(res)
     mat = dummy.as_matrix()
     dump_svmlight_file(mat, y_train, 'svm-output.libsvm')
