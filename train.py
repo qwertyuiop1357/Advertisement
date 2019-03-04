@@ -50,7 +50,7 @@ if __name__ == '__main__':
     fm_model = xl.create_fm() 
     fm_model.setTrain('svm-output.libsvm')  
 
-    param = {'task':'binary', 'lr':0.00001, 'lambda':0.0000001, 'metric':'auc'}
+    param = {'task':'binary', 'lr':0.1, 'lambda':0.001, 'metric':'auc'}
 
     fm_model.fit(param, './model.out')
     fm_model.setTest('svm-output_1.libsvm')  
