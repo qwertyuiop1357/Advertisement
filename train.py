@@ -61,3 +61,19 @@ if __name__ == '__main__':
     auc = roc_auc_score(y_test, dfm)
     print("ROC auc score for XGBoost+FM is " + auc)
     
+    # XGBoost+FFM
+    ffm_train = FFMFormatPandas()
+    ffm_train_data = ffm_train.fit_transform(df, y='clicked')
+    ffm_model = xl.create_ffm() 
+    ffm_model.setTrain('svm-output.libffm')  
+
+    param = {'task':'binary', 'lr':0.1, 'lambda':0.001, 'metric':'auc'}
+
+    ffm_model.fit(param, './model.out')
+    ffm_model.setTest('svm-output_1.libffm')  
+    ffm_model.setSigmoid()
+
+    fm_model.predict("./model.out", "./output.txt")
+    dfm = pd.read_fwf('output.txt', header=None)
+    auc = roc_auc_score(y_test, dfm)
+    print("ROC auc score for XGBoost+FFM is " + auc)
