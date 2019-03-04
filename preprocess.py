@@ -123,10 +123,13 @@ def _generate_vector_features(df, VECTOR_FEATURES):
 if __name__ == '__main__':
     df = pd.read_csv(DATA_PATH, sep=' ', nrows=100000)
     df['date'] = df['context_timestamp'].apply(lambda x: time.strftime('%Y-%m-%d', time.localtime(x)))
+    # for field-aware factorization machine
     df = _generate_historical_convrate(df)
     df = _generate_instant_feature(df)
     y = df.pop('is_trade')
     _pop_features(df)
+    
+    # for logistic regression and factorization machine
     new_df = _generate_categorical_features(df, CATEGORICAL_FEATURES)
     X = _generate_vector_features(new_df, VECTOR_FEATURES)
    
